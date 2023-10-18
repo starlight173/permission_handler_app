@@ -226,17 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
             okPressed: () => openAppSettings());
       }
     } catch (e) {
-      var status = await Permission.photos.status;
-      if (status.isDenied) {
-        // ignore: use_build_context_synchronously
-        showAlertDialog(context,
-            title: "Permission Denied",
-            description: "Please grant permission to access photos",
-            okText: 'Open Settings',
-            okPressed: () => openAppSettings());
-      } else {
-        print("Exception occurred");
-      }
+      debugPrint(e.toString());
     }
   }
 }
